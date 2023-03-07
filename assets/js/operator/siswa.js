@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = "http://localhost/apptabungan/";
+  const baseUrl = window.location.origin;
   show_nasabah();
 
   $("#table1").dataTable({
@@ -98,7 +98,7 @@ $(document).ready(function () {
   function pilihkelas() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}operator/getAllRuangKelas`,
+      url: `${baseUrl}/operator/getAllRuangKelas`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -132,7 +132,7 @@ $(document).ready(function () {
     console.log(nis);
     $.ajax({
       type: "POST",
-      url: `${baseUrl}operator/deleteDataSiswa`,
+      url: `${baseUrl}/operator/deleteDataSiswa`,
       dataType: "JSON",
       data: {
         nis: nis,
@@ -193,7 +193,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}operator/updateDataSiswa`,
+      url: `${baseUrl}/operator/updateDataSiswa`,
       dataType: "JSON",
       data: {
         nis: nis,
@@ -239,7 +239,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}operator/inputDataSiswa`,
+      url: `${baseUrl}/operator/inputDataSiswa`,
       dataType: "JSON",
       data: {
         nis: nis,
@@ -273,7 +273,7 @@ $(document).ready(function () {
   function show_nasabah() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}operator/getAllDataSiswa`,
+      url: `${baseUrl}/operator/getAllDataSiswa`,
       async: false,
       dataType: "JSON",
       success: function (data) {

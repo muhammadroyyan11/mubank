@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin + '/mubank/';
+  const baseUrl = window.location.origin;
   show_user();
 
   $("#table1").dataTable();
@@ -21,10 +21,9 @@ $(document).ready(function () {
   $("#table1").on("click", ".is_active", function () {
     var id = $(this).data("id");
 
-    console.log(baseUrl);
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/userkontrol/${id}`,
+      url: `${baseUrl}/admin/userkontrol/${id}`,
       dataType: "json",
       data: {},
       success: function (data) {
@@ -66,7 +65,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: `${baseUrl}admin/deleteuser`,
+      url: `${baseUrl}/admin/deleteuser`,
       dataType: "json",
       data: {
         id: id,
@@ -88,7 +87,7 @@ $(document).ready(function () {
     console.log(name, email, role, id);
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/edituser`,
+      url: `${baseUrl}/admin/edituser`,
       dataType: "JSON",
       data: {
         id: id,
@@ -124,7 +123,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: `${baseUrl}admin/adduser`,
+      url: `${baseUrl}/admin/adduser`,
       dataType: "JSON",
       data: {
         nama: nama,
@@ -154,7 +153,7 @@ $(document).ready(function () {
   function getrole() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getroleadmin`,
+      url: `${baseUrl}/admin/getroleadmin`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -224,7 +223,7 @@ $(document).ready(function () {
   function show_user() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getadmin`,
+      url: `${baseUrl}/admin/getadmin`,
       async: false,
       dataType: "JSON",
       success: function (data) {

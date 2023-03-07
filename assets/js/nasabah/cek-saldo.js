@@ -3,12 +3,12 @@ $("#btnSearch").on("click", function () {
 });
 
 function getrekapp() {
-  const baseUrl = "https://mubank.syariatutthullab.my.id/";
+  const baseUrl = window.location.origin;
   var nis = $("#inputNIS").val();
 
   $.ajax({
     type: "ajax",
-    url: `${baseUrl}ceksaldo/getrekap/${nis}`,
+    url: `${baseUrl}/ceksaldo/getrekap/${nis}`,
     async: false,
     dataType: "JSON",
     success: function (data) {

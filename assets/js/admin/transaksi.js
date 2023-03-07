@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin + '/mubank/';
+  const baseUrl = window.location.origin;
   show_transaksi();
 
   $("#table1").dataTable({
@@ -329,7 +329,7 @@ $(document).ready(function () {
     if (nominal != null && nominal > 0) {
       $.ajax({
         type: "POST",
-        url: `${baseUrl}admin/inputdatadebet`,
+        url: `${baseUrl}/admin/inputdatadebet`,
         Datatype: "JSON",
         data: {
           nis: nis,
@@ -350,7 +350,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/aktivasimember`,
+      url: `${baseUrl}/admin/aktivasimember`,
       dataType: "JSON",
       data: {
         nis: nis,
@@ -424,7 +424,7 @@ $(document).ready(function () {
   function carinasabah() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/allnonmember`,
+      url: `${baseUrl}/admin/allnonmember`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -447,7 +447,7 @@ $(document).ready(function () {
   function show_transaksi() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getalltransaksi`,
+      url: `${baseUrl}/admin/getalltransaksi`,
       async: false,
       dataType: "JSON",
       success: function (data) {

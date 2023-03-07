@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = "http://localhost/apptabungan/";
+  const baseUrl = window.location.origin;
   show_transaksi();
 
   $("#table1").dataTable({
@@ -68,7 +68,7 @@ $(document).ready(function () {
     var nama = $("#findNasabahKredit").find(":selected").text();
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}operator/getMemberInfo/${nis}`,
+      url: `${baseUrl}/operator/getMemberInfo/${nis}`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -89,7 +89,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}operator/getMemberInfo/${nis}`,
+      url: `${baseUrl}/operator/getMemberInfo/${nis}`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -245,7 +245,7 @@ $(document).ready(function () {
   function getNasabahAktif() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}operator/getNasabahAktif`,
+      url: `${baseUrl}/operator/getNasabahAktif`,
       dataType: "JSON",
       async: false,
       success: function (data) {
@@ -301,7 +301,7 @@ $(document).ready(function () {
     if (nominal != null && nominal > 0) {
       $.ajax({
         type: "POST",
-        url: `${baseUrl}operator/inputdatakredit`,
+        url: `${baseUrl}/operator/inputdatakredit`,
         dataType: "JSON",
         data: {
           nis: nis,
@@ -327,7 +327,7 @@ $(document).ready(function () {
     if (nominal != null && nominal > 0) {
       $.ajax({
         type: "POST",
-        url: `${baseUrl}operator/inputdatadebet`,
+        url: `${baseUrl}/operator/inputdatadebet`,
         Datatype: "JSON",
         data: {
           nis: nis,
@@ -349,7 +349,7 @@ $(document).ready(function () {
     console.log(nis);
     $.ajax({
       type: "POST",
-      url: `${baseUrl}operator/aktivasimember`,
+      url: `${baseUrl}/operator/aktivasimember`,
       dataType: "JSON",
       data: {
         nis: nis,
@@ -423,7 +423,7 @@ $(document).ready(function () {
   function carinasabah() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}operator/getnonmember`,
+      url: `${baseUrl}/operator/getnonmember`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -447,7 +447,7 @@ $(document).ready(function () {
   function show_transaksi() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}operator/getalltransaksi`,
+      url: `${baseUrl}/operator/getalltransaksi`,
       async: false,
       dataType: "JSON",
       success: function (data) {

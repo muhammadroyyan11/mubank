@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin + '/mubank/';
+  const baseUrl = window.location.origin;
   show_user();
 
   $("#table1").dataTable();
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/getuser/${id}`,
+      url: `${baseUrl}/admin/getuser/${id}`,
       dataType: "json",
       data: {},
       success: function (data) {
@@ -94,7 +94,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: `${baseUrl}admin/deleteuser`,
+      url: `${baseUrl}/admin/deleteuser`,
       dataType: "json",
       data: {
         id: id,
@@ -119,7 +119,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: `${baseUrl}admin/edituser`,
+      url: `${baseUrl}/admin/edituser`,
       dataType: "JSON",
       data: {
         id: id,
@@ -159,7 +159,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: `${baseUrl}admin/adduser`,
+      url: `${baseUrl}/admin/adduser`,
       dataType: "JSON",
       data: {
         nip: nip,
@@ -192,7 +192,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/updatedatakelas`,
+      url: `${baseUrl}/admin/updatedatakelas`,
       dataType: "JSON",
       data: {
         id_kelas: id_kelas,
@@ -209,7 +209,7 @@ $(document).ready(function () {
   function show_kelas() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getAllKelasEmpty`,
+      url: `${baseUrl}/admin/getAllKelasEmpty`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -248,7 +248,7 @@ $(document).ready(function () {
   function getkelaslist() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getAllKelasEmpty`,
+      url: `${baseUrl}/admin/getAllKelasEmpty`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -274,7 +274,7 @@ $(document).ready(function () {
   function getrole() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getrole`,
+      url: `${baseUrl}/admin/getrole`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -343,7 +343,7 @@ $(document).ready(function () {
   function show_user() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getuser`,
+      url: `${baseUrl}/admin/getuser`,
       async: false,
       dataType: "JSON",
       success: function (data) {

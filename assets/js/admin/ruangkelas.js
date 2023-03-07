@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin + '/mubank/';
+  const baseUrl = window.location.origin;
   show_kelas();
 
   $("#table1").dataTable();
@@ -19,7 +19,7 @@ $(document).ready(function () {
     var id_ruang = $("#deleteid_ruang").val();
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/deleteruangkelas`,
+      url: `${baseUrl}/admin/deleteruangkelas`,
       dataType: "JSON",
       data: {
         id_ruang: id_ruang,
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/inputkelas`,
+      url: `${baseUrl}/admin/inputkelas`,
       dataType: "JSON",
       data: {
         kelas: kelas,
@@ -54,7 +54,7 @@ $(document).ready(function () {
     var ruang = $("#txtinputruang").val();
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/inputruangkelas`,
+      url: `${baseUrl}/admin/inputruangkelas`,
       dataType: "JSON",
       data: {
         id_kelas: id_kelas,
@@ -75,7 +75,7 @@ $(document).ready(function () {
   function func_pilihkelas() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getkelaslist`,
+      url: `${baseUrl}/admin/getkelaslist`,
       async: false,
       dataType: "json",
       success: function (data) {
@@ -118,7 +118,7 @@ $(document).ready(function () {
     console.log(id_ruang, ruang, id_kelas);
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/updateruangkelas`,
+      url: `${baseUrl}/admin/updateruangkelas`,
       dataType: "JSON",
       data: {
         id_ruang: id_ruang,
@@ -138,7 +138,7 @@ $(document).ready(function () {
   function show_kelas() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getAllRuangKelas`,
+      url: `${baseUrl}/admin/getAllRuangKelas`,
       async: false,
       dataType: "JSON",
       success: function (data) {

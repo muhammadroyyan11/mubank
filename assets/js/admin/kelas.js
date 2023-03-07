@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin + "/mubank/";
+  const baseUrl = window.location.origin;
+
   show_kelas();
 
   $("#table1").dataTable();
@@ -15,7 +16,7 @@ $(document).ready(function () {
     var id_kelas = $("#deleteidkelas").val();
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/deletekelas`,
+      url: `${baseUrl}/admin/deletekelas`,
       dataType: "JSON",
       data: {
         id_kelas: id_kelas,
@@ -36,7 +37,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/inputkelas`,
+      url: `${baseUrl}/admin/inputkelas`,
       dataType: "JSON",
       data: {
         kelas: kelas,
@@ -65,7 +66,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/updatedatakelas`,
+      url: `${baseUrl}/admin/updatedatakelas`,
       dataType: "JSON",
       data: {
         id_kelas: id_kelas,
@@ -82,7 +83,7 @@ $(document).ready(function () {
   function show_kelas() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getkelaslist`,
+      url: `${baseUrl}/admin/getkelaslist`,
       async: false,
       dataType: "JSON",
       success: function (data) {

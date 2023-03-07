@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin + '/mubank/';
+  const baseUrl = window.location.origin;
   show_nasabah();
 
   $("#table1").dataTable({
@@ -98,7 +98,7 @@ $(document).ready(function () {
   function pilihkelas() {
     $.ajax({
       type: "ajax",
-      url: `${baseUrl}admin/getAllruangkelas`,
+      url: `${baseUrl}/admin/getAllruangkelas`,
       async: false,
       dataType: "JSON",
       success: function (data) {
@@ -131,7 +131,7 @@ $(document).ready(function () {
     var nis = $("#deleteNIS").val();
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/deletenasabah`,
+      url: `${baseUrl}/admin/deletenasabah`,
       dataType: "JSON",
       data: {
         nis: nis,
@@ -192,7 +192,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/updatenasabah`,
+      url: `${baseUrl}/admin/updatenasabah`,
       dataType: "JSON",
       data: {
         nis: nis,
@@ -238,7 +238,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: `${baseUrl}admin/inputnasabah`,
+      url: `${baseUrl}/admin/inputnasabah`,
       dataType: "JSON",
       data: {
         nis: nis,
