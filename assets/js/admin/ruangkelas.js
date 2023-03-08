@@ -75,7 +75,7 @@ $(document).ready(function () {
 
   function func_pilihkelas() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getkelaslist`,
       async: false,
       dataType: "json",
