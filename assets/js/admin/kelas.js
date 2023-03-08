@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin + '/mubank';
+  const baseUrl = window.location.origin;
 
   show_kelas();
 
