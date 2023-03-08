@@ -118,6 +118,8 @@ $(document).ready(function () {
         }
         $("#table_kelas").html(html);
       },
-    });
+    }); 
   }
 });
+
+//tes
