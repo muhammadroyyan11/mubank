@@ -21,6 +21,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/deleteruangkelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id_ruang: id_ruang,
       },
