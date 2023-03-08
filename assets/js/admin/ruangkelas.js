@@ -40,6 +40,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/inputkelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         kelas: kelas,
       },
@@ -57,6 +58,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/inputruangkelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id_kelas: id_kelas,
         ruang: ruang,
@@ -79,6 +81,7 @@ $(document).ready(function () {
       url: `${baseUrl}/admin/getkelaslist`,
       async: false,
       dataType: "json",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var ini = "<option></option>";
@@ -121,6 +124,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/updateruangkelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id_ruang: id_ruang,
         ruang: ruang,
