@@ -138,9 +138,10 @@ $(document).ready(function () {
 
   function show_kelas() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getAllRuangKelas`,
       async: false,
+      contentType: "application/json",
       dataType: "JSON",
       success: function (data) {
         var html = "";
