@@ -67,10 +67,11 @@ $(document).ready(function () {
     var nis = $("#findNasabahKredit").find(":selected").val();
     var nama = $("#findNasabahKredit").find(":selected").text();
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getMemberInfo/${nis}`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         Jumlahsaldo = data["saldo"][0]["saldo"];
         nip = data["nip"][0]["nip"];
@@ -88,10 +89,11 @@ $(document).ready(function () {
     var nama = $("#findNasabahDebet").find(":selected").text();
 
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getMemberInfo/${nis}`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         Jumlahsaldo = data["saldo"][0]["saldo"];
         nip = data["nip"][0]["nip"];
@@ -131,10 +133,11 @@ $(document).ready(function () {
     console.log(nis);
 
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getrekapdata/${nis}`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var infoJumlahTransaksi = data.length;
         if (infoJumlahTransaksi < 1) {
@@ -193,10 +196,11 @@ $(document).ready(function () {
     var nama = $("#findRekapNasabah").text();
 
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getsummary/${nis}`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var isi = data.length;
         if (isi < 1) {
@@ -244,9 +248,10 @@ $(document).ready(function () {
 
   function getNasabahAktif() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getNasabahAktif`,
       dataType: "JSON",
+      contentType: "application/json",
       async: false,
       success: function (data) {
         var html = "";
@@ -303,6 +308,7 @@ $(document).ready(function () {
         type: "POST",
         url: `${baseUrl}/operator/inputdatakredit`,
         dataType: "JSON",
+        contentType: "application/json",
         data: {
           nis: nis,
           nominal: nominal,
@@ -329,6 +335,7 @@ $(document).ready(function () {
         type: "POST",
         url: `${baseUrl}/operator/inputdatadebet`,
         Datatype: "JSON",
+        contentType: "application/json",
         data: {
           nis: nis,
           nominal: nominal,
@@ -351,6 +358,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/operator/aktivasimember`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nis: nis,
       },
@@ -422,10 +430,11 @@ $(document).ready(function () {
 
   function carinasabah() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getnonmember`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         console.log(data);
         var html = "";
@@ -446,10 +455,11 @@ $(document).ready(function () {
 
   function show_transaksi() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getalltransaksi`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         console.table(data);
         var html = "";

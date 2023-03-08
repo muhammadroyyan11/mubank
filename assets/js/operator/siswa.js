@@ -97,10 +97,11 @@ $(document).ready(function () {
 
   function pilihkelas() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getAllRuangKelas`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var ini = "<option></option>";
@@ -134,6 +135,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/operator/deleteDataSiswa`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nis: nis,
       },
@@ -195,6 +197,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/operator/updateDataSiswa`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nis: nis,
         nama: nama,
@@ -241,6 +244,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/operator/inputDataSiswa`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nis: nis,
         nama: nama,
@@ -272,10 +276,11 @@ $(document).ready(function () {
 
   function show_nasabah() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/operator/getAllDataSiswa`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         console.table(data);
         var html = "";

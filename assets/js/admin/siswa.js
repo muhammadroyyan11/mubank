@@ -97,10 +97,11 @@ $(document).ready(function () {
 
   function pilihkelas() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getAllruangkelas`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var ini = "<option></option>";
@@ -194,6 +195,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/updatenasabah`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nis: nis,
         nama: nama,
@@ -240,6 +242,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/inputnasabah`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nis: nis,
         nama: nama,
@@ -271,10 +274,11 @@ $(document).ready(function () {
 
   function show_nasabah() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getAllnasabah`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var i;

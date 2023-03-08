@@ -68,10 +68,11 @@ $(document).ready(function () {
     var nama = $("#findNasabahKredit").find(":selected").text();
     // var baseURL = "<?php echo base_url('admin/getMemberInfo/'); ?>" + nis;
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getMemberInfo/${nis}`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         Jumlahsaldo = data["saldo"][0]["saldo"];
         nip = data["nip"][0]["nip"];
@@ -132,10 +133,11 @@ $(document).ready(function () {
 
     // var baseUrl = "<?php echo base_url('admin/getrekapdata/'); ?>" + nis;
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getrekapdata/${nis}`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var infoJumlahTransaksi = data.length;
         if (infoJumlahTransaksi < 1) {
@@ -195,10 +197,11 @@ $(document).ready(function () {
     // var baseUrl = "<?php echo base_url('admin/getsummary/'); ?>" + nis;
 
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getsummary/${nis}`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var isi = data.length;
         if (isi < 1) {
@@ -246,9 +249,10 @@ $(document).ready(function () {
 
   function memberaktif() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}admin/getMemberList`,
       dataType: "JSON",
+      contentType: "application/json",
       async: false,
       success: function (data) {
         var html = "";
@@ -304,6 +308,7 @@ $(document).ready(function () {
         type: "POST",
         url: `${baseUrl}admin/inputdatakredit`,
         dataType: "JSON",
+        contentType: "application/json",
         data: {
           nis: nis,
           nominal: nominal,
@@ -330,7 +335,8 @@ $(document).ready(function () {
       $.ajax({
         type: "POST",
         url: `${baseUrl}/admin/inputdatadebet`,
-        Datatype: "JSON",
+        dataType: "JSON",
+        contentType: "application/json",
         data: {
           nis: nis,
           nominal: nominal,
@@ -352,6 +358,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/aktivasimember`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nis: nis,
       },
@@ -423,10 +430,11 @@ $(document).ready(function () {
 
   function carinasabah() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/allnonmember`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var ini = "<option></option>";
@@ -446,10 +454,11 @@ $(document).ready(function () {
 
   function show_transaksi() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getalltransaksi`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var number = 1;

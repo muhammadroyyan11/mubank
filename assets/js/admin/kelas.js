@@ -18,6 +18,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/deletekelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id_kelas: id_kelas,
       },
@@ -39,6 +40,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/inputkelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         kelas: kelas,
       },
@@ -68,6 +70,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/updatedatakelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id_kelas: id_kelas,
         kelas: kelas,
@@ -82,10 +85,11 @@ $(document).ready(function () {
 
   function show_kelas() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getkelaslist`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var i;

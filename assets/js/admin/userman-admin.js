@@ -89,6 +89,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/edituser`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id: id,
         name: name,
@@ -125,6 +126,7 @@ $(document).ready(function () {
       type: "post",
       url: `${baseUrl}/admin/adduser`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nama: nama,
         email: email,
@@ -152,10 +154,11 @@ $(document).ready(function () {
 
   function getrole() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getroleadmin`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         console.log(data);
         var html = "";
@@ -222,10 +225,11 @@ $(document).ready(function () {
 
   function show_user() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getadmin`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         console.log(data);
         var html = "";

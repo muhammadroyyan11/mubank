@@ -7,10 +7,11 @@ function getrekapp() {
   var nis = $("#inputNIS").val();
 
   $.ajax({
-    type: "ajax",
+    type: "GET",
     url: `${baseUrl}/ceksaldo/getrekap/${nis}`,
     async: false,
     dataType: "JSON",
+    contentType: "application/json",
     success: function (data) {
       var infoJumlahTransaksi = data.length;
       console.log(data);

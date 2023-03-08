@@ -93,9 +93,10 @@ $(document).ready(function () {
     var id = $("#deleteIdUser").val();
 
     $.ajax({
-      type: "post",
+      type: "POST",
       url: `${baseUrl}/admin/deleteuser`,
       dataType: "json",
+      contentType: "application/json",
       data: {
         id: id,
       },
@@ -118,9 +119,10 @@ $(document).ready(function () {
     var id_ruang = $("#eRuang").find(":selected").val();
 
     $.ajax({
-      type: "post",
+      type: "POST",
       url: `${baseUrl}/admin/edituser`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id: id,
         nip: nip,
@@ -158,9 +160,10 @@ $(document).ready(function () {
     console.log(nip, nama, id_ruang, email, password, role);
 
     $.ajax({
-      type: "post",
+      type: "POST",
       url: `${baseUrl}/admin/adduser`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         nip: nip,
         nama: nama,
@@ -194,6 +197,7 @@ $(document).ready(function () {
       type: "POST",
       url: `${baseUrl}/admin/updatedatakelas`,
       dataType: "JSON",
+      contentType: "application/json",
       data: {
         id_kelas: id_kelas,
         kelas: kelas,
@@ -208,10 +212,11 @@ $(document).ready(function () {
 
   function show_kelas() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getAllKelasEmpty`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var i;
@@ -247,10 +252,11 @@ $(document).ready(function () {
 
   function getkelaslist() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getAllKelasEmpty`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var i;
@@ -273,10 +279,11 @@ $(document).ready(function () {
 
   function getrole() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getrole`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         var html = "";
         var i;
@@ -342,10 +349,11 @@ $(document).ready(function () {
 
   function show_user() {
     $.ajax({
-      type: "ajax",
+      type: "GET",
       url: `${baseUrl}/admin/getuser`,
       async: false,
       dataType: "JSON",
+      contentType: "application/json",
       success: function (data) {
         console.log(data);
         var html = "";
