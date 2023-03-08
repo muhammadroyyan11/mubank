@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const baseUrl = window.location.origin;
+  const baseUrl = window.location.origin + '/mubank';
 
   show_kelas();
 
@@ -34,20 +34,17 @@ $(document).ready(function () {
   $("#btnAddKelas").on("click", function () {
     var kelas = $("#inputkelas").val();
 
-    console.log(kelas);
-
     $.ajax({
       type: "POST",
       url: `${baseUrl}/admin/inputkelas`,
       dataType: "JSON",
-      contentType: "application/json",
       data: {
         kelas: kelas,
       },
       success: function (data) {
-        console.log(data);
         $("#modalTambahKelas").modal("hide");
         show_kelas();
+        
       },
     });
     return false;
